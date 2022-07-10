@@ -17,6 +17,7 @@
   --technomart-active-red: #BA2732;
   --scale-green: #5FBB2D;
   --another-dark-blue: #405069;
+  --close-grey: #DADADA;
   --background-range: #F7F3EC;
   --darkest-blue: #32425C;
   --dark-blue: #293449;
@@ -162,6 +163,7 @@ img {
 .about-contacts__wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 13px;
   padding-bottom: 14px;
 }
@@ -177,6 +179,7 @@ img {
 
 .header-contacts {
   display: flex;
+  justify-content: flex-end;
 }
 
 .header-contacts__address {
@@ -359,16 +362,19 @@ img {
   top: 12px;
   right: 0;
   z-index: 1;
-
+  padding-top: 22px;
+  padding-left: 31px;
+  padding-bottom: 34px;
+  padding-right: 29px;
   background-color: var(--basic-background);
   width: 360px;
   border-radius: 2px;
   box-shadow: 0px 8px 20px var(--large-shadow);
+  box-sizing: border-box;
 }
 
 .user-controls__popup--active {
   display: block;
-
 }
 
 .user-controls__title {
@@ -378,6 +384,10 @@ img {
   line-height: 30px;
   text-transform: uppercase;
   margin: 0;
+}
+
+.user-controls__inputs {
+  margin-top: 43px;
 }
 
 .user-controls__input {
@@ -406,19 +416,108 @@ img {
   color: var(--basic-black);
 }
 
-.user-controls__checkbox-label {
+.user-controls__input:hover {
+  border-color: var(--technomart-green);
+}
+
+.user-controls__input:focus {
+  border-color: var(--technomart-green);
+  outline: 1px solid var(--feedback-gold);
+}
+
+.user-controls__input:invalid {
+  border-color: var(--technomart-accent);
+}
+
+.user-controls__input:hover:invalid {
+  padding-top: 7px;
+  padding-bottom: 11px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border: 2px solid var(--technomart-accent);
+}
+
+.user-controls__input:disabled {
+  border-color: var(--grey-border);
+  background-color: var(--grey-background);
+  opacity: 0.5;
+}
+
+.user-controls__input--login {
+  margin-bottom: 7px;
+}
+
+.user-controls__other-controls {
+  margin-top: 12px;
+  margin-bottom: 38px;
+}
+
+.user-controls__checkbox {
+  position: relative;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.user-controls__checkbox-input + .user-controls__checkbox::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid var(--normal-blue);
+  border-radius: 2px;
+}
+
+.user-controls__checkbox-input:hover + .user-controls__checkbox::before {
+  border-color: var(--input-hover);
+}
+
+.user-controls__checkbox-input:active + .user-controls__checkbox::before,
+.user-controls__checkbox-input:disabled + .user-controls__checkbox::before {
+  border-color: var(--input-blocked);
+}
+
+.user-controls__checkbox-input:checked + .user-controls__checkbox::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 7px;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("../img/icons/checkmark.svg");
+}
+
+.user-controls__checkbox-input:checked:hover + .user-controls__checkbox::after {
+  opacity: 0.6;
+}
+
+.user-controls__checkbox-input:checked:active + .user-controls__checkbox::after,
+.user-controls__checkbox-input:checked:disabled + .user-controls__checkbox::after {
+  opacity: 0.2;
 }
 
 .user-controls__other-link {
+  position: relative;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: var(--basic-black);
+  margin-left: 20px;
+}
+
+.user-controls__main-controls {
+  display: flex;
+  justify-content: space-between;
 }
 
 .user-controls__main-control {
@@ -446,35 +545,114 @@ img {
 .user-controls__main-control--login {
   color: var(--basic-background);
   background-color: var(--technomart-green);
+  padding-left: 18px;
 }
 
-.user-controls__main-control--registration, .user-controls__main-control--logout {
+.user-controls__main-control--login:hover {
+  background-color: var(--scale-green);
+}
+
+.user-controls__main-control--login:active {
+  background-color: var(--technomart-active-green);
+}
+
+.user-controls__main-control--login::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 24px;
+  width: 17px;
+  height: 14px;
+  background-image: url("../img/icons/login.svg");
+  background-size: 100% 100%;
+}
+
+.user-controls__main-control--registration,
+.user-controls__main-control--logout {
   color: var(--darkest-blue);
+}
+
+.user-controls__main-control--registration:hover,
+.user-controls__main-control--logout:hover {
+  border-color: var(--normal-blue);
+}
+
+.user-controls__main-control--registration:active,
+.user-controls__main-control--logout:active {
+  color: var(--grey-border);
+  border-color: var(--grey-border);
+}
+
+.user-controls__profile-links {
+  margin-top: 26px;
+}
+
+.user-controls__profile-link {
+  display: block;
+  margin-bottom: 23px;
 }
 
 .user-controls__close {
   position: absolute;
   top: 16px;
   right: 16px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../img/icons/close-popup.svg");
+  cursor: pointer;
 }
 
 .user-controls__profile {
   display: none;
   width: 233px;
-  padding-top: 14px;
-  padding-bottom: 13px;
+  padding-top: 11px;
+  padding-bottom: 10px;
 }
 
 .user-controls__profile--active {
-  display: block;
+  display: flex;
+  justify-content: space-between;
 }
 
 .user-controls__profile-name {
+  position: relative;
   font-style: normal;
+  padding-left: 41px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--grey-background);
+  box-sizing: border-box;
+}
+
+.user-controls__profile-name::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  left: 17px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/icons/user.svg");
+}
+
+.user-controls__logout-link {
+  display: block;
+  position: relative;
+}
+
+.user-controls__logout-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(180deg);
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/icons/login.svg");
 }
 
 .user-controls__profile-link {
@@ -519,6 +697,10 @@ img {
   padding-bottom: 24px;
 }
 
+.navigation__item:nth-child(1) .navigation__link {
+  padding-left: 5px;
+}
+
 .navigation__link:hover {
   background-color: var(--darkest-blue);
   color: var(--grey-border);
@@ -547,13 +729,13 @@ img {
 }
 
 .order-controls__bookmark {
-  margin-right: 25px;
+  margin-right: 20px;
   display: flex;
   align-items: center;
 }
 
 .order-controls__cart {
-  margin-right: 25px;
+  margin-right: 20px;
   display: flex;
   align-items: center;
 }
@@ -728,10 +910,10 @@ img {
   width: 180px;
   box-sizing: border-box;
   border: 1px solid var(--basic-background);
-  padding-left: 33px;
-  padding-right: 5px;
-  padding-top: 12px;
-  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 6px;
+  padding-top: 11px;
+  padding-bottom: 9px;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -878,7 +1060,7 @@ img {
 }
 
 .catalog {
-  margin-top: 35px;
+  margin-top: 50px;
   margin-bottom: 53px;
   display: grid;
   grid-template-columns: 220px 870px;
@@ -997,15 +1179,15 @@ img {
 }
 
 .filters__list--checkbox {
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .filters__list--radio {
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .filters__list--manufacturer {
-  margin-bottom: 34px;
+  margin-bottom: 31px;
 }
 
 .filters__list--power {
@@ -1013,11 +1195,11 @@ img {
 }
 
 .filters__item--checkbox:not(:nth-last-child(1)) {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .filters__item--radio:not(:nth-last-child(1)) {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .filters__legend {
@@ -1168,7 +1350,7 @@ img {
 .sort {
   position: relative;
   width: 280px;
-  margin-top: 34px;
+  margin-top: 33px;
   margin-bottom: 31px;
   overflow: visible;
 }
@@ -1338,6 +1520,7 @@ img {
   color: var(--dark-blue);
   margin: 0;
   margin-top: 14px;
+  width: 200px;
 }
 
 .product__prices {
@@ -1521,7 +1704,7 @@ img {
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 52px;
-  padding-bottom: 52px;
+  padding-bottom: 45px;
 }
 
 .company-contacts-wrapper__about {
@@ -1573,7 +1756,7 @@ img {
 .page-footer__wrapper {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
+  padding-bottom: 32px;
 }
 
 .logo-contacts-social__logo {
@@ -1582,8 +1765,8 @@ img {
   width: 225px;
   background-color: var(--technomart-accent);
   margin-bottom: 21px;
-  padding-top: 11px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 15px;
   text-align: center;
 }
 
@@ -1625,10 +1808,11 @@ img {
   display: flex;
   flex-wrap: wrap;
   width: 360px;
+  margin-left: 2px;
 }
 
 .social__item:not(:nth-child(7n)) {
-  margin-right: 17px;
+  margin-right: 19px;
 }
 
 .social__link {
@@ -1814,7 +1998,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding-top: 20px;
+  padding-top: 18px;
   padding-bottom: 22px;
 }
 
