@@ -1701,11 +1701,23 @@ img {
   padding-left: 12px;
   padding-right: 3px;
   width: 223px;
-
 }
 
 .subscribe__email::placeholder {
   color: var(--grey-placeholder);
+}
+
+.subscribe__email:hover {
+  border-color: var(--scale-green);
+}
+
+.subscribe__email:focus {
+  border-color: var(--technomart-green);
+  outline: 1px solid var(--promo-yellow);
+}
+
+.subscribe__email:invalid {
+  border-color: var(--technomart-red);
 }
 
 .subscribe__submit {
