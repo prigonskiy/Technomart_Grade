@@ -13,6 +13,8 @@
   --basic-black: #000000;
   --technomart-accent: #EE3643;
   --technomart-dark-accent: #B52933;
+  --technomart-hover-red: #CA2C37;
+  --technomart-active-red: #BA2732;
   --scale-green: #5FBB2D;
   --another-dark-blue: #405069;
   --background-range: #F7F3EC;
@@ -21,6 +23,7 @@
   --normal-blue: #3D546F;
   --slider-blue: rgba(41, 52, 73, 0.6);
   --technomart-green: #63A63E;
+  --technomart-active-green: #518534;
   --promo-yellow: #FFBF47;
   --promo-skyblue: #3BBCE3;
   --promo-purple: #DC91D8;
@@ -82,6 +85,14 @@ img {
   padding-bottom: 14px;
   border-radius: 2px;
   width: 195px;
+}
+
+.technomart-button:hover {
+  background-color: var(--technomart-hover-red);
+}
+
+.technomart-button:active {
+  background-color: var(--technomart-active-red);
 }
 
 .technomart-title {
@@ -535,6 +546,34 @@ img {
   align-items: center;
 }
 
+.order-controls__bookmark {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.order-controls__cart {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.order-controls__bookmark-icon,
+.order-controls__cart-icon {
+  opacity: 0.6;
+}
+
+.order-controls__bookmark-amount,
+.order-controls__cart-amount {
+  margin-left: 6px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  color: var(--basic-background);
+}
+
 .order-controls__checkout {
   display: block;
   padding-top: 12px;
@@ -550,6 +589,14 @@ img {
   background-color: var(--technomart-green);
   text-align: center;
   border-radius: 2px;
+}
+
+.order-controls__checkout:hover {
+  background-color: var(--scale-green);
+}
+
+.order-controls__checkout:active {
+  background-color: var(--technomart-active-green);
 }
 
 .promo {
@@ -912,6 +959,14 @@ img {
   cursor: pointer;
 }
 
+.range__toggle:hover {
+  background-color: var(--technomart-active-green);
+}
+
+.range__toggle:active {
+  background-color: var(--scale-green);
+}
+
 .range__input {
   width: 95px;
   padding-top: 10px;
@@ -1146,12 +1201,13 @@ img {
   box-shadow: 0px 8px 20px var(--large-shadow);
 }
 
-.product:hover .product__controls {
+.product:hover .product__controls,
+.product:focus-within .product__controls {
+  display: block;
   position: absolute;
   top: 27px;
   left: 50%;
   transform: translateX(-50%);
-  display: block;
   margin-top: 39px;
 }
 
@@ -1159,7 +1215,8 @@ img {
   vertical-align: top;
 }
 
-.product:hover .product-image {
+.product:hover .product-image,
+.product:focus-within .product-image {
   opacity: 0.1;
 }
 
@@ -1183,12 +1240,31 @@ img {
   margin: 0 auto;
 }
 
+.product__button:hover {
+  border-color: var(--normal-blue);
+}
+
+.product__button:active {
+  border-color: var(--grey-border);
+  color: var(--grey-border);
+}
+
 .product__button--buy {
   background-color: var(--technomart-green);
   color: var(--basic-background);
   text-align: left;
   padding-left: 41px;
   margin-bottom: 11px;
+  border: none;
+}
+
+.product__button--buy:hover {
+  background-color: var(--scale-green)
+}
+
+.product__button--buy:active {
+  background-color: var(--technomart-active-green);
+
 }
 
 .product__button--buy::before {
@@ -1220,6 +1296,7 @@ img {
 }
 
 .product__price {
+  display: block;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -1237,11 +1314,20 @@ img {
   color: var(--basic-background);
   background-image: url("../img/backgrounds/current-price.svg");
   background-repeat: no-repeat;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  background-position: top left;
+  padding-top: 12px;
+  padding-bottom: 12px;
   width: 140px;
   text-decoration: none;
   margin-top: 9px;
+}
+
+.product__price--current:hover {
+  background-image: url("../img/backgrounds/current-price-hover.svg");
+}
+
+.product__price--current:active {
+  background-image: url("../img/backgrounds/current-price-active.svg");
 }
 
 .pagination {
@@ -1502,6 +1588,10 @@ img {
   background-color: var(--opaque-social);
 }
 
+.social__link:hover {
+  background-color: var(--dark-blue);
+}
+
 .social__link::after {
   content: "";
   position: absolute;
@@ -1574,6 +1664,10 @@ img {
   color: var(--feedback-gold);
 }
 
+.feedback__mail:hover {
+  text-decoration: underline;
+}
+
 .subscribe__text {
   margin: 0;
   margin-bottom: 2px;
@@ -1627,6 +1721,14 @@ img {
   cursor: pointer;
 }
 
+.subscribe__submit:hover {
+  background-color: var(--scale-green);
+}
+
+.subscribe__submit:active {
+  background-color: var(--technomart-active-green);
+}
+
 .subscribe__submit::after {
   position: absolute;
   content: "";
@@ -1676,4 +1778,8 @@ img {
   font-size: 14px;
   line-height: 18px;
   color: var(--feedback-gold);
+}
+
+.developers__link:hover {
+  text-decoration: underline;
 }

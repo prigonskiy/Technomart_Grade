@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
-    <!-- <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="favicon/180.png">
+    <link rel="apple-touch-icon" href="favicon/152.png">
     <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials"> -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
@@ -106,13 +106,13 @@
               <svg class="order-controls__bookmark-icon" width="13" height="18" viewBox="0 0 13 18" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.329529 18L6.62054 14.9444L12.9116 18V1.74604C12.9116 0.781731 12.1068 0 11.1141 0H2.12696C1.13427 0 0.329529 0.781731 0.329529 1.74604V18ZM6.62054 12.9923L2.12696 15.1749V1.74606H11.1141V15.1749L6.62054 12.9923Z" fill="white"/>
               </svg>
-              <span class="order-controls__bookmark-amount"></span>
+              <span class="order-controls__bookmark-amount" aria-label="Количество товаров в закладках"></span>
             </a>
             <a class="order-controls__cart" href="" aria-label="Корзина">
               <svg class="order-controls__cart-icon" width="19" height="18" viewBox="0 0 19 18" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.11944 1.80229C3.9604 1.80194 3.80709 1.82003 3.6614 1.85443C3.46169 1.41204 3.19789 1.01515 2.89785 0.713604C2.38861 0.201799 1.58545 0 0.473633 0V1.8C1.15282 1.8 1.54367 1.8982 1.63142 1.9864C1.9699 2.32657 2.26464 3.01776 2.26464 3.6L2.27364 3.72728L3.15111 9.90046C1.68288 9.97702 0.54545 11.1229 0.474733 12.5554L0.473633 13.5C0.560336 14.9795 1.69398 16.1177 3.10931 16.1985L3.31261 16.1989C3.68109 17.2481 4.6765 18 5.84665 18C7.01637 18 8.01149 17.2487 8.38029 16.2H10.477C10.8458 17.2487 11.8409 18 13.0107 18C14.4944 18 15.6972 16.7912 15.6972 15.3C15.6972 13.8088 14.4944 12.6 13.0107 12.6C11.8409 12.6 10.8458 13.3513 10.477 14.4H8.38029C8.01149 13.3513 7.01637 12.6 5.84665 12.6C4.67692 12.6 3.68181 13.3513 3.31301 14.4H3.16014C2.70344 14.3725 2.29377 13.9612 2.26303 13.4461L2.26464 12.6C2.28878 12.1332 2.69565 11.7243 3.20452 11.6989L4.97236 11.6993L4.98517 11.7H14.0108L14.143 11.6578C14.822 11.4413 15.3655 10.9275 15.6229 10.2623L15.7172 10.0746L16.0237 9.46429C16.3408 8.83253 16.658 8.19968 16.967 7.58142C17.7239 6.06697 18.1999 5.1045 18.3053 4.86815C18.8467 3.65441 17.75 2.72022 16.6291 2.70032L4.11944 1.80229ZM13.6997 9.9H5.05222C4.99472 9.88393 4.9509 9.83498 4.94233 9.77401L4.06483 3.60066L16.4972 4.49543C16.2797 4.94129 15.8842 5.73764 15.3665 6.77348L15.3536 6.79944C15.058 7.39067 14.7414 8.02265 14.4247 8.65357L14.1185 9.26311L14.0025 9.49395L13.9588 9.596C13.912 9.72698 13.8191 9.83462 13.6997 9.9ZM13.0107 16.2C13.5052 16.2 13.9062 15.7971 13.9062 15.3C13.9062 14.8029 13.5052 14.4 13.0107 14.4C12.5161 14.4 12.1152 14.8029 12.1152 15.3C12.1152 15.7971 12.5161 16.2 13.0107 16.2ZM6.74215 15.3C6.74215 15.7971 6.34122 16.2 5.84665 16.2C5.35208 16.2 4.95115 15.7971 4.95115 15.3C4.95115 14.8029 5.35208 14.4 5.84665 14.4C6.34122 14.4 6.74215 14.8029 6.74215 15.3Z" fill="white"/>
               </svg>
-              <span class="order-controls__cart-amount"></span>
+              <span class="order-controls__cart-amount" aria-label="Количество товаров в корзине"></span>
             </a>
             <a class="order-controls__checkout" href="">Оформить заказ</a>
           </div>
@@ -244,7 +244,7 @@
           </ul>
         </div>
         <ul class="catalog__products products">
-          <li class="products__card product new">
+          <li class="products__card product new" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-1.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 3000">
               <div class="product__controls">
@@ -257,10 +257,10 @@
             </a>
             <div class="product__prices">
               <p class="product__price product__price--old">22500 ₽</p>
-              <p class="product__price product__price--current">15500 ₽</p>
+              <a class="product__price product__price--current" href="">15500 ₽</a>
             </div>
           </li>
-          <li class="products__card product">
+          <li class="products__card product" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-2.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 6000">
               <div class="product__controls">
@@ -273,10 +273,10 @@
             </a>
             <div class="product__prices">
               <p class="product__price product__price--old">30500 ₽</p>
-              <p class="product__price product__price--current">25500 ₽</p>
+              <a class="product__price product__price--current" href="">25500 ₽</a>
             </div>
           </li>
-          <li class="products__card product new">
+          <li class="products__card product new" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-2.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 2000">
               <div class="product__controls">
@@ -288,10 +288,10 @@
               <h3 class="product__name">Перфоратор BOSCH BFG 2000</h3>
             </a>
             <div class="product__prices">
-              <p class="product__price product__price--current">25500 ₽</p>
+              <a class="product__price product__price--current" href="">25500 ₽</a>
             </div>
           </li>
-          <li class="products__card product">
+          <li class="products__card product" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-2.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 3000">
               <div class="product__controls">
@@ -304,10 +304,10 @@
             </a>
             <div class="product__prices">
               <p class="product__price product__price--old">22500 ₽</p>
-              <p class="product__price product__price--current">15500 ₽</p>
+              <a class="product__price product__price--current" href="">15500 ₽</a>
             </div>
           </li>
-          <li class="products__card product new">
+          <li class="products__card product new" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-2.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 6000">
               <div class="product__controls">
@@ -319,10 +319,10 @@
               <h3 class="product__name">Перфоратор BOSCH BFG 6000</h3>
             </a>
             <div class="product__prices">
-              <p class="product__price product__price--current">25500 ₽</p>
+              <a class="product__price product__price--current" href="">25500 ₽</a>
             </div>
           </li>
-          <li class="products__card product">
+          <li class="products__card product" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-1.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 2000">
               <div class="product__controls">
@@ -334,10 +334,10 @@
               <h3 class="product__name">Перфоратор BOSCH BFG 2000</h3>
             </a>
             <div class="product__prices">
-              <p class="product__price product__price--current">25500 ₽</p>
+              <a class="product__price product__price--current" href="">25500 ₽</a>
             </div>
           </li>
-          <li class="products__card product new">
+          <li class="products__card product new" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-2.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 3000">
               <div class="product__controls">
@@ -350,10 +350,10 @@
             </a>
             <div class="product__prices">
               <p class="product__price product__price--old">22500 ₽</p>
-              <p class="product__price product__price--current">15500 ₽</p>
+              <a class="product__price product__price--current" href="">15500 ₽</a>
             </div>
           </li>
-          <li class="products__card product">
+          <li class="products__card product" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-1.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 2000">
               <div class="product__controls">
@@ -366,10 +366,10 @@
             </a>
             <div class="product__prices">
               <p class="product__price product__price--old">30500 ₽</p>
-              <p class="product__price product__price--current">25500 ₽</p>
+              <a class="product__price product__price--current" href="">25500 ₽</a>
             </div>
           </li>
-          <li class="products__card product new">
+          <li class="products__card product new" tabindex="0">
             <div class="product-image-controls">
               <img class="product-image-controls__product-image product-image" src="img/content/perforator-2.jpg" width="216" height="180" alt="Изображение перфоратора BOSCH BFG 3000">
               <div class="product__controls">
@@ -381,7 +381,7 @@
               <h3 class="product__name">Перфоратор BOSCH BFG 3000</h3>
             </a>
             <div class="product__prices">
-              <p class="product__price product__price--current">25500 ₽</p>
+              <a class="product__price product__price--current" href="">25500 ₽</a>
             </div>
           </li>
         </ul>
