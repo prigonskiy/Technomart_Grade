@@ -1435,6 +1435,7 @@ img {
 .page-footer__wrapper {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 30px;
 }
 
 .logo-contacts-social__logo {
@@ -1442,6 +1443,7 @@ img {
   position: relative;
   width: 225px;
   background-color: var(--technomart-accent);
+  margin-bottom: 21px;
   padding-top: 11px;
   padding-bottom: 10px;
   text-align: center;
@@ -1457,12 +1459,17 @@ img {
   left: 0;
 }
 
+.logo-contacts-social__footer-contacts {
+  margin-bottom: 24px;
+}
+
 .footer-contacts__address {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--beige-background);
+  margin-bottom: 1px;
 }
 
 .footer-contacts__phone {
@@ -1478,6 +1485,12 @@ img {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  width: 360px;
+}
+
+.social__item:not(:nth-child(7n)) {
+  margin-right: 17px;
 }
 
 .social__link {
@@ -1530,8 +1543,21 @@ img {
   height: 18px;
 }
 
+.page-footer__feedback-subscribe {
+  margin-top: 29px;
+}
+
+.feedback-subscribe {
+  text-align: right;
+}
+
+.feedback-subscribe__feedback {
+  margin-bottom: 29px;
+}
+
 .feedback__text {
   margin: 0;
+  margin-bottom: 1px;
   padding: 0;
   font-style: normal;
   font-weight: 400;
@@ -1550,6 +1576,7 @@ img {
 
 .subscribe__text {
   margin: 0;
+  margin-bottom: 2px;
   padding: 0;
   font-style: normal;
   font-weight: 400;
