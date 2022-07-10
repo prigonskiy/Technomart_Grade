@@ -233,15 +233,11 @@
           <button class="filters__show" type="submit">Показать</button>
         </form>
         <div class="catalog__sort sort">
-          <a class="sort__toggle" href="" aria-haspopup="true">Сортировать</a>
-          <ul class="sort__dropdown-list" aria-label="Выпадающий список для сортировки">
-            <li class="sort__dropdown-item">
-              <a class="sort__link sort__link--price-descending">По убыванию цены</a>
-            </li>
-            <li class="sort__dropdown-item">
-              <a class="sort__link sort__link--price-ascending">По возрастанию цены</a>
-            </li>
-          </ul>
+          <select class="sort__list">
+            <option class="sort__option sort-option--sorting" value="sorting">Сортировать</option>
+            <option class="sort__option sort-option--price-descending" value="price-descending">По убыванию цены</option>
+            <option class="sort__option sort-option--price-ascending" value="price-ascending">По возрастанию цены</option>
+          </select>
         </div>
         <ul class="catalog__products products">
           <li class="products__card product new" tabindex="0">

@@ -1165,6 +1165,58 @@ img {
   background-color: transparent;
 }
 
+.sort {
+  position: relative;
+  width: 280px;
+  margin-top: 34px;
+  margin-bottom: 31px;
+  overflow: visible;
+}
+
+.sort::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  width: 10px;
+  height: 7px;
+  background-image: url("../img/icons/select-arrow.svg");
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.sort__list {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--dark-blue);
+  border: 1px solid var(--normal-blue);
+  border-radius: 2px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 30px;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sort__list:hover {
+  border-color: var(--technomart-green);
+}
+
+.sort__list:active,
+.sort__list:focus {
+  border-color: var(--technomart-green);
+  outline: 1px solid var(--promo-yellow);
+}
+
 .products {
   margin: 0;
   padding: 0;
