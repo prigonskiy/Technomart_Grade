@@ -145,7 +145,7 @@ img {
 }
 
 .about-contacts {
-  background-color: var(--beige-background);
+  background-color: var(--basic-background);
 }
 
 .about-contacts__wrapper {
@@ -1280,20 +1280,23 @@ img {
 
 .services {
   background-color: var(--dark-grey-background);
+  padding-top: 52px;
+  padding-bottom: 22px;
 }
 
 .services__title {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .services__text {
-  margin: 0;
+  margin: 0 auto;
+  margin-bottom: 65px;
   padding: 0;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  margin: 0 auto;
   width: 556px;
   color: var(--dark-blue);
 }
@@ -1302,12 +1305,53 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.services__item {
+  width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.services__item:nth-child(3n) {
+  margin-right: 0;
 }
 
 .service {
+  position: relative;
   box-shadow: 0px 8px 20px var(--large-shadow);
   border-radius: 2px;
   background-color: var(--basic-background);
+  padding-top: 167px;
+  padding-bottom: 43px;
+  padding-left: 26px;
+  padding-right: 44px;
+  box-sizing: border-box;
+}
+
+.service::before {
+  position: absolute;
+  content: "";
+  width: 90px;
+  height: 90px;
+  background-repeat: no-repeat;
+  top: 31px;
+  left: 24px;
+}
+
+.service--delivery::before {
+  background-image: url("../img/backgrounds/services-delivery.svg");
+}
+
+.service--warranty::before {
+  background-image: url("../img/backgrounds/services-warranty.svg");
+}
+
+.service--credit::before {
+  background-image: url("../img/backgrounds/services-credit.svg");
 }
 
 .service__title {
